@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!--Javascript-->
+  <script type="text/javascript">
+      function c(val) {
+          document.getElementById("displaypanel").value=val;
+      }
+      function v(val) {
+          document.getElementById("displaypanel").value+=val;
+      }
+      function e() { 
+          try { 
+              c(eval(document.getElementById("displaypanel").value)) 
+          } 
+          catch(e) {
+              c('Error') 
+          } 
+      }
+  </script>
+<!--End of Javascript-->
+
+<!--Custom Styling-->
+  <style type="text/css">
+    * {
+      margin: 0 auto;
+      padding: 5px;
+    }
+
+    .container {
+      width: 80% !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+    }
+
+    .btn {
+      width: 80px;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 5px;
+    }
+  </style>
+<!--End of Custom Styling-->
+</head>
+
+<body>
+    <div class="container" >
+        <div class="col-lg-5">
+            <div class="col-lg-12 display">
+                <h1>Calculator</h1>
+                <input type="text" readonly id="displaypanel"/>
+            </div>
+            <div class="col-lg-12">
+                <button class="btn btn-warning btn-block" style="width:100%;" value="C" onclick='c("")'>C</button>
+            </div>
+            <div class="col-lg-9">
+                  <button class="btn btn-default" value="7" onclick="v('7')">7</button>
+                  <button class="btn btn-default" value="8" onclick="v('8')">8</button>
+                  <button class="btn btn-default" value="9" onclick="v('9')">9</button>
+            </div>
+            <div class="col-lg-3">
+                  <button class="btn btn-primary" value="/" onclick='v("/")'>/</button>
+            </div>
+            <div class="col-lg-9">
+                  <button class="btn btn-default" value="4" onclick="v('4')">4</button>
+                  <button class="btn btn-default" value="5" onclick="v('5')">5</button>
+                  <button class="btn btn-default" value="6" onclick="v('6')">6</button>
+            </div>
+            <div class="col-lg-3">
+                  <button class="btn btn-primary" value="*" onclick='v("*")'>X</button>
+            </div>
+            <div class="col-lg-9">
+                  <button class="btn btn-default" value="1" onclick="v('1')">1</button>
+                  <button class="btn btn-default" value="2" onclick="v('2')">2</button>
+                  <button class="btn btn-default" value="3" onclick="v('3')">3</button>
+            </div>
+            <div class="col-lg-3">
+                  <button class="btn btn-primary" value="-" onclick='v("-")'>-</button>
+            </div>
+            <div class="col-lg-9">
+                  <button class="btn btn-default" value="." onclick="v('.')"><b>.</b></button>
+                  <button class="btn btn-default" value="0" onclick="v('0')">0</button>
+                  <button class="btn btn-success" value="=" onclick='e()'>Enter</button>
+            </div>
+            <div class="col-lg-3">
+                  <button class="btn btn-primary" value="+" onclick='v("+")'>+</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
